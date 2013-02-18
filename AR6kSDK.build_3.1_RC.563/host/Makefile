@@ -87,9 +87,11 @@ export  ATH_ANDROID_ENV
 export  ATH_SOFTMAC_FILE_USED
 export  ATH_CFG80211_ENV
 export  ATH_DEBUG_DRIVER
-export  ATH_AR6K_HCI_PAL
-export  ATH_AR6K_DEBUG_ALLOC
-export  ATH_BUILD_P2P
+#export  ATH_AR6K_HCI_PAL
+#export  ATH_AR6K_DEBUG_ALLOC
+#export  ATH_BUILD_P2P
+
+export  ATH_AR600x_SD32_XXX
 
 ATH_SRC_BASE :=$(shell pwd)
 MAKE :=make
@@ -161,8 +163,8 @@ endif
 #	cp -f tools/recEvent/restore.sh $(COMPILED_IMAGE_OBJECTS_PATH)
 	
 clean:
-	rm -f os/linux/ar6000.mod.c os/linux/*.o os/linux/*.ko wmi/*.o htc/AR6000/src/*.o htc/*.o \
-	bmi/src/*.o wlan/src/*.o driver/* tools/wmiconfig/wmiconfig \
+	rm -f os/linux/ar6000.mod.c os/linux/*.$(KMOD_EXTENSION) os/linux/*.ko wmi/*.$(KMOD_EXTENSION) htc/AR6000/src/*.$(KMOD_EXTENSION) htc/*.$(KMOD_EXTENSION) \
+	bmi/src/*.$(KMOD_EXTENSION) wlan/src/*.$(KMOD_EXTENSION) driver/* tools/wmiconfig/wmiconfig \
 	tools/recEvent/recEvent
 
 # The kernel module build process leaves some intermediate files, this will clean up all these files

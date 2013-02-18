@@ -19,6 +19,7 @@
 #==============================================================================
 
 # define BOARD_WLAN_ATHEROS_SDK into your android/vendor/xxxx/BoardConfig.mk
+# BOARD_WLAN_ATHEROS_SDK defined in your android/device/htc/golfu/BoardConfig.mk
 
 ifneq ($(TARGET_SIMULATOR),true)
 ifeq ($(BOARD_WLAN_CHIP_AR6003), true)
